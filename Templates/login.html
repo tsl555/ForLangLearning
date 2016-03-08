@@ -1,0 +1,21 @@
+﻿<div ng-controller="loginCtrl">
+    <div class="loginBox">
+        <div>
+            <span>User name:</span>
+            <span>
+                <select ng-options="user.name for user in users" ng-model="selectedUser"></select>
+            </span>
+        </div>
+        <div>
+            <span>Password:</span>
+            <span><input type="password" ng-model="password" /></span>
+        </div>
+        <div>
+            <div ng-bind="errorMessage"></div>
+        </div>
+        <div>
+            <button ng-disabled="!users" ng-click="loginUser(selectedUser.id, password)">Login</button>
+        </div>
+        <div><a ng-href="#/createUser">Register Me</a></div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+﻿<div ng-bind-template="User: {{user.name}}"></div>
+<div>
+    <div>Lessons: {{user.lessons.length}}</div>
+    <div>
+        <div ng-repeat="lesson in user.lessons">
+            <div><a ng-href="#/user/{{user._id.$oid}}/lesson/{{lesson.id}}" ng-bind="lesson.name"></a></div>
+        </div>
+    </div>
+</div>

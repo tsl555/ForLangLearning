@@ -1,0 +1,15 @@
+﻿<div ng-controller="createUserCtrl">
+    <div>
+        <div>
+            <span>Login:</span><span><input type="text" ng-model="login" /></span>
+        </div>
+        <div>
+            <span>Password:</span><span><input type="password" ng-model="password" /></span>
+        </div>
+        <div>
+            <span>Confirm password:</span><span><input type="password" ng-model="confirmPassword" /></span>
+        </div>
+        <div ng-show="errorMessage" ng-bind="errorMessage"></div>
+        <div><button ng-click="createNewUser(login, password, confirmPassword)">Create User</button></div>
+    </div>
+</div>

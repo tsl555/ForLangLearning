@@ -1,0 +1,9 @@
+﻿<div ng-controller="lessonCtrl">
+    <div ng-bind-template="Lesson '{{lesson.culture}}'"></div>
+    <div>Culture: <span ng-bind="lesson.culture"></span></div>
+    <div ng-repeat="wordItem in words">
+        <span>{{wordItem | extractWord}}</span>
+        <span>-</span>
+        <span>{{wordItem | extractTranslation:'ru':'df_2'}}</span>
+    </div>
+</div>
