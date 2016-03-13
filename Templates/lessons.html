@@ -1,9 +1,16 @@
-﻿<div ng-bind-template="User: {{user.name}}"></div>
-<div>
-    <div>Lessons: {{user.lessons.length}}</div>
+﻿<div ng-controller="lessonsCtrl">
+    <div ng-bind-template="User: {{user.name}}"></div>
     <div>
-        <div ng-repeat="lesson in user.lessons">
-            <div><a ng-href="#/user/{{user._id.$oid}}/lesson/{{lesson.id}}" ng-bind="lesson.name"></a></div>
+        <div>Lessons: {{user.lessons.length}}</div>
+        <div>
+            <div ng-repeat="lesson in user.lessons">
+                <div ng-mouseenter="$parent.hoveredLessonId=lesson.id" ng-mouseleave="$parent.hoveredLessonId=null"><a ng-href="#/lesson/{{lesson.id}}" ng-bind="lesson.name"></a><span ng-show="$parent.hoveredLessonId==lesson.id" ng-click="deleteLesson(lesson)">Del</span></div>
+            </div>
+            <div ng-click="showNewLessonOptions=!showNewLessonOptions">New Lesson:</div>
+            <div ng-show="showNewLessonOptions">
+                <div><span>Name:</span><span><input type="text" ng-model="newLessonName" /></span></div>
+                <div><button ng-click="createLesson()">Create</button></div>
+            </div>
         </div>
     </div>
 </div>

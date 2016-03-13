@@ -9,11 +9,11 @@ function configRoutes($routeProvider) {
             templateUrl: 'Templates/login.html'/*,
             controller: 'loginCtrl'*/
         })
-        .when('/user/:userKey/lessons', {
+        .when('/lessons', {
             templateUrl: 'Templates/lessons.html'/*,
             controller: 'lessonsCtrl'*/
         })
-        .when('/user/:userKey/lesson/:lessonId', {
+        .when('/lesson/:lessonId', {
             templateUrl: 'Templates/lesson.html'/*,
             controller: 'lessonCtrl'*/
         })
@@ -21,7 +21,11 @@ function configRoutes($routeProvider) {
             templateUrl: 'Templates/create-user.html'/*,
             controller: 'createUserCtrl'*/
         })
-        .otherwise({ redirectTo: '/login' });;
+        .when('/page-not-found', {
+            templateUrl: 'Templates/page-not-found.html'/*,
+            controller: 'createUserCtrl'*/
+        })
+        .otherwise({ redirectTo: '/page-not-found' });;
 }
 
 function mainCtrl() {

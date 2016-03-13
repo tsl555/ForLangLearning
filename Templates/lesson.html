@@ -1,9 +1,26 @@
 ﻿<div ng-controller="lessonCtrl">
-    <div ng-bind-template="Lesson '{{lesson.culture}}'"></div>
+    <div ng-bind-template="Lesson '{{lesson.name}}'"></div>
     <div>Culture: <span ng-bind="lesson.culture"></span></div>
     <div ng-repeat="wordItem in words">
-        <span>{{wordItem | extractWord}}</span>
-        <span>-</span>
-        <span>{{wordItem | extractTranslation:'ru':'df_2'}}</span>
+        <div ng-mouseenter="onWordItemMouseEnter(wordItem.word)" ng-mouseleave="onWordItemMouseLeave()">
+            <span>{{wordItem | extractWord}}</span>
+            <span>-</span>
+            <span>{{wordItem | extractTranslation:'ru':'df_2'}}</span>
+            <span ng-show="isWordToolPanelVisible(wordItem.word)">
+                <span ng-click="playWord(wordItem)">Play</span>
+                <span ng-click="deattachWordFromLesson(wordItem.word)">Del</span>
+            </span>
+        </div>
+    </div>
+    <div>
+        <div>
+            <div ng-click="onAddNewWordClick()">Add New Word</div>
+            <div ng-show="addNewWordSectionVisible">
+                <div><input type="text" ng-model="newWord"/>
+                </div>
+                <div ng-bind="addNewWordMessage" ng-show="addNewWordMessage"></div>
+                <div><button ng-click="onAddNewWordButtonClick()">Add</button></div>
+            </div>
+        </div>
     </div>
 </div>
