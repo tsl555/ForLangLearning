@@ -5,6 +5,20 @@
     <meta charset="utf-8"/>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.js"></script>
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles/bootstrap.css"/>
+    <link rel="stylesheet" href="styles/bootstrap-theme.css"/>
+    <!--<script type="text/javascript" src="scripts/bootstrap.js></script>-->
+
+    <!-- Latest compiled and minified CSS -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"/>-->
+    <!-- Optional theme -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"/>-->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
     <script type="text/javascript" src="scripts/fll-data-storage.js"></script>
     <script type="text/javascript" src="scripts/login-module.js"></script>
     <script type="text/javascript" src="scripts/lessons-module.js"></script>
@@ -12,16 +26,52 @@
     <script type="text/javascript" src="scripts/for-lang-learning-module.js"></script>
     <script type="text/javascript">
 
+    
     </script>
-
+    <style type="text/css">
+        @media (min-width: 700px) {
+            .my-class {
+                color: red;
+            }
+        }
+        @media (min-width: 1000px) {
+            .my-class {
+                color: yellow;
+            }
+        }
+    </style>
 </head>
 <body ng-controller="mainCtrl">
-<input type="email" />
-<a href="#/login">LoginMe</a>
-<a href="#/lessons">Lessons</a>
-<a href="#/lesson/78">Lesson78</a>
-
-<ng-view></ng-view>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">X</div>
+        <div class="col-lg-3">X</div>
+        <div class="col-lg-3">X</div>
+        <div class="col-lg-3">X</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">X</div>
+        <div class="col-sm-3">X</div>
+        <div class="col-sm-3">X</div>
+        <div class="col-sm-3">X</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-offset-6 col-sm-3">X</div>
+        <div class="col-sm-3">X</div>
+    </div>
+</div>
+<div class="container navbar-fixed-bottom">
+    <div class="row">
+        <div class="navbar-default">
+            <div class="navbar-collapse">
+                <a class="navbar-nav" href="#/login">LoginMe</a>
+                <a class="navbar-nav" href="#/lessons">Lessons</a>
+                <a class="navbar-nav" href="#/lesson/78">Lesson78</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-view class="container"></div>
 
 </body>
 </html>

@@ -1,21 +1,21 @@
-﻿<div ng-controller="loginCtrl">
-    <div class="loginBox">
-        <div>
-            <span>User name:</span>
-            <span>
+﻿<div class="row" ng-controller="loginCtrl">
+    <div>
+        <div class="row">
+            <span class="col-lg-2 col-sm-2">User name:</span>
+            <span class="col-lg-2 col-sm-2">
                 <select ng-options="user.name for user in users" ng-model="selectedUser"></select>
             </span>
         </div>
-        <div>
-            <span>Password:</span>
-            <span><input type="password" ng-model="password" /></span>
+        <div class="row">
+            <span class="col-lg-2 col-sm-2">Password:</span>
+            <span class="col-lg-2 col-sm-2"><input type="password" ng-model="password" /></span>
         </div>
-        <div>
+        <div class="row">
             <div ng-bind="errorMessage"></div>
         </div>
         <div>
-            <button ng-disabled="!users" ng-click="loginUser(selectedUser.name, password)">Login</button>
+            <a class="btn btn-primary" ng-disabled="!users" ng-click="loginUser(selectedUser.name, password)">Login</a>
         </div>
-        <div><a ng-href="#/createUser">Register Me</a></div>
+        <div><a ng-href="#/createUser" class="btn btn-link">Register Me</a></div>
     </div>
 </div>

@@ -92,14 +92,16 @@ function userKeyHolder() {
             /*var c = document.cookie.split("; ");
             for (i in c)
                 document.cookie = /^[^=]+/.exec(c[i])[0] + "=;expires=" + new Date().toUTCString() + ";path=/";*/
-            document.cookie = "userKey="+userKey;
+            //document.cookie = "userKey=" + userKey;
+            sessionStorage["userKey"] = userKey;
         },
 
         getUserKey: function() {
-            var authKey = /userKey=([A-z0-9]+)/.exec(document.cookie);
+            /*var authKey = /userKey=([A-z0-9]+)/.exec(document.cookie);
             if (authKey && authKey.length >= 2)
                 return authKey[1];
-            return null;
+            return null;*/
+            return sessionStorage["userKey"];
         }
     }
 }
